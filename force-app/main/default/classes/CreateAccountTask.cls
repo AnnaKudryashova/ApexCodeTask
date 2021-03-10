@@ -1,12 +1,12 @@
-public class CreateAccountTask {
+public with sharing class CreateAccountTask {
     @InvocableMethod
-    public static void createTask(List<Id> accountIds) {
+    public static void createTask(List<Account> accounts) {
         List<Task> tasks = new List<Task>();
-        Task Tsk = new Task();
-        Account[] account = [Select name from Account where Account.id in :accountIds];
-        Tsk.Subject = 'Negotiations with ' + account[0].Name;
-        Tsk.WhatId = account[0].ID;
-        tasks.add(Tsk);
+        for (Account account : accounts) {
+        Task newTask = new Task(Subject = 'Negotiations with ' + account.Name,
+        WhatId = account.Id);
+        tasks.add(newTask );
+        }
         insert tasks;
     }
 }
