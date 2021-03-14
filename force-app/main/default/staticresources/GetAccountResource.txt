@@ -1,0 +1,8 @@
+{
+  "attributes" : {
+    "type" : "Account",
+    "url" : "/services/data/v51.0/sobjects/Account/0010900000Bwz1LAAR"
+  },
+  "Name" : "From Workbench Updated",
+  "Id" : "0010900000Bwz1LAAR"
+}
